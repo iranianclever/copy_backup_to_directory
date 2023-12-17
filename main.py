@@ -20,7 +20,7 @@ except:
     print("ALREADY EXISTED")
 
 
-@repeat(every(60).minutes, src, toSearch)
+@repeat(every(120).minutes, src=src, searchFile=toSearch)
 def checkFile(src, searchFile):  # Recursive Fuction to Check the file in each Folder
     global folder, file
     # listDir returns all files and folder within the src in src_file
