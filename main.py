@@ -1,5 +1,7 @@
 import shutil
 import os
+from schedule import every, repeat, run_pending
+import time
 
 list_files = os.listdir('E:\\BackupAmin')
 list_files.sort()
@@ -18,6 +20,7 @@ except:
     print("ALREADY EXISTED")
 
 
+@repeat(every(60).minutes, src, toSearch)
 def checkFile(src, searchFile):  # Recursive Fuction to Check the file in each Folder
     global folder, file
     # listDir returns all files and folder within the src in src_file
@@ -36,6 +39,11 @@ def checkFile(src, searchFile):  # Recursive Fuction to Check the file in each F
             file += 1
 
 
-checkFile(src, toSearch)
-print("FOLDER", folder)  # COUNT OF TOTAL FOLDERS
-print("FILE", file)  # COUNT OF TOTAL FILES
+while True:
+    run_pending()
+    time.sleep(1)
+
+
+# checkFile(src, toSearch)
+# print("FOLDER", folder)  # COUNT OF TOTAL FOLDERS
+# print("FILE", file)  # COUNT OF TOTAL FILES
