@@ -2,8 +2,9 @@ import shutil
 import os
 from schedule import every, repeat, run_pending
 import time
+import platform # TODO: To running in different operating systems
 
-list_files = os.listdir('E:\\BackupAmin')
+list_files = os.listdir('I:\\BackupAmin')
 list_files.sort()
 list_files.pop()
 
