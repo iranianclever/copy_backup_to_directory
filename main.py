@@ -6,7 +6,6 @@ import platform # TODO: To running in different operating systems
 
 list_files = os.listdir('I:\\BackupAmin')
 list_files.sort()
-list_files.pop()
 
 print(list_files)
 
